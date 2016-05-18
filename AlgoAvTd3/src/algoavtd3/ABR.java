@@ -97,7 +97,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
     
     @Override
     public boolean estVide() {
-        return racine.cle != null;
+        return racine == null;
     }
 
     private class Noeud<K extends Comparable, V> {
