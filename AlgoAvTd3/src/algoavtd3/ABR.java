@@ -52,7 +52,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public void vider() {
-        racine = new Noeud();
+        racine = null;
     }
 
     /**
