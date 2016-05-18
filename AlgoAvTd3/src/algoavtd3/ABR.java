@@ -96,6 +96,17 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    private Noeud supprimerPlusPetitNoeud() {
+        if (racine.fg.estVide()) {
+            Noeud n = racine;
+            racine = null;
+            return n;
+        }
+        else {
+            return racine.fg.supprimerPlusPetitNoeud();
+        }
+    }
+    
     @Override
     public boolean estVide() {
         return racine == null;
