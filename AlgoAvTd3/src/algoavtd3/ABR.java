@@ -91,10 +91,6 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         return racine.cle != null;
     }
 
-    private boolean estVide() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private class Noeud<K extends Comparable, V> {
         K cle;
         V valeur;
