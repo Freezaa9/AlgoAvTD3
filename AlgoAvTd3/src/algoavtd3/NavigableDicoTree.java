@@ -9,7 +9,7 @@ package algoavtd3;
  *
  * @author Antoine
  */
-public class NavigableMapList<K, V> implements Dico {
+public class NavigableDicoTree<K, V> implements Dico {
     
     
 }
