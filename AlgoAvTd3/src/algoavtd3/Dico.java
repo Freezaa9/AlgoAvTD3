@@ -60,4 +60,10 @@ public interface Dico<K, V> {
     // remarque(antoine) : ces méthodes n'ont à mon avis pas leur place dans l'interface
     //notes: un arbre équilibré est un arbre dons la hauteur des sous arbre varie au plus de 1
     // et dont les sous arbres sont déséquilibrés.
+    
+    public int hauteur();
+    
+    public boolean estEquilibre();
+    
+    public void equilibrer();
 }

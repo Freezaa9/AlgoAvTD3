@@ -6,7 +6,6 @@
 package algoavtd3;
 
 /**
- *
  * @author Antoine
  * @param <K>
  * @param <V>
@@ -45,9 +44,8 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public int nbElem() {
-        if(this.estVide()){
+        if(this.estVide())
             return 0;
-        }
         return racine.fg.nbElem() + racine.fd.nbElem() + 1;
     }
 
@@ -132,6 +130,26 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
     @Override
     public boolean estVide() {
         return racine == null;
+    }
+
+    @Override
+    public int hauteur() {
+        if (racine == null)
+            return 0;
+        return 1 + Math.max(racine.fg.hauteur(),racine.fd.hauteur());
+    }
+
+    @Override
+    public boolean estEquilibre() {
+        if (Math.abs(racine.fg.hauteur() - racine.fd.hauteur()) > 1){
+            return false;
+        }
+        return racine.fg.estEquilibre() && racine.fd.estEquilibre();
+    }
+
+    @Override
+    public void equilibrer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private class Noeud {
