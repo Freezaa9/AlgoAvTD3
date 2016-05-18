@@ -16,8 +16,6 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
     private Noeud racine;
     
     public ABR(){
-        //TODO
-        racine = new Noeud();
     }
 
     /**
@@ -113,15 +111,10 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
                         // un arbre vide existe mais à une racine == null
 
         public Noeud(K cle, V valeur) {
-            this();
+            this.fg = new ABR<>();
+            this.fd = new ABR<>();
             this.cle = cle;
             this.valeur = valeur;
-        }
-        
-        public Noeud() {
-            fg = new ABR();
-            fd = new ABR();
-        }
-        
+        }               
     }
 }
