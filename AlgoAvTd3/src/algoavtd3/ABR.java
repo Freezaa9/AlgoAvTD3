@@ -78,17 +78,13 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public boolean exist(K cle) {    
-        return existRecursif(racine, cle);              
-    }
-    
-    private boolean existRecursif(Noeud n, K k) {    
-        if (n == null)
+        if (racine == null)
             return false;
         
-        if (k.compareTo(n.cle) == 0)
-            return true;                      
+        if (cle.compareTo(racine.cle) == 0)
+            return true;  
         
-        return existRecursif(n.fg.racine, k) || existRecursif(n.fd.racine, k);
+        return racine.fg.exist(cle) || racine.fd.exist(cle);              
     }
 
     @Override
