@@ -47,7 +47,18 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public V rechercher(K cle) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(estVide()){
+            return null;
+        }
+        if (cle.compareTo(racine.cle)==0) {
+            return (V)racine.valeur;
+        }
+        if (cle.compareTo(racine.cle)<0) {
+            return (V)racine.fg.rechercher(cle);
+        }
+        else{
+            return (V)racine.fd.rechercher(cle);
+        }
     }
 
     @Override
