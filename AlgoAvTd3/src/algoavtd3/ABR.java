@@ -93,7 +93,29 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public V supprimer(K cle) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(estVide()){
+            return null;
+        }
+        if (cle.compareTo(racine.cle)==0) {
+            if(racine.fg.estVide()){
+                Noeud pluPetitNoeud = supprimePlusPetitNoeud();
+                plusPetitNoeud.fd = racine.fd.racine;
+                racine = plusPetitNoeud;
+            }
+            if(racine.fd.estVide()){
+                racine = racine.fg.racine;
+            }
+            
+            
+            
+            
+        }
+        if (cle.compareTo(racine.cle)<0) {
+            return (V)racine.fg.supprimer(cle);
+        }
+        else{
+            return (V)racine.fd.supprimer(cle);
+        }
     }
     
     private Noeud supprimerPlusPetitNoeud() {
