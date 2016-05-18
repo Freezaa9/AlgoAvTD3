@@ -53,7 +53,7 @@ public interface Dico<K, V> {
     /*
      * Retourne si le dico est vide ou pas
      */
-    public boolean estVider();
+    public boolean estVide();
 
     // il est possible de rajouter des méthodes pour la partie test : hauteur équilibrer etc ...
     // dans la suite du tp c'est necessaire

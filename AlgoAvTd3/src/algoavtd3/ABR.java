@@ -45,9 +45,14 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param cle
+     * @return
+     */
     @Override
     public V rechercher(K cle) {
-        if(estVide()){
+            if(estVide()){
             return null;
         }
         if (cle.compareTo(racine.cle)==0) {
@@ -68,6 +73,11 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public V supprimer(K cle) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public boolean estVide() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
