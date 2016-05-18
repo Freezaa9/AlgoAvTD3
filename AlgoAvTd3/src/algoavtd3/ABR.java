@@ -96,15 +96,19 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         if(estVide()){
             return null;
         }
+        
         if (cle.compareTo(racine.cle)==0) {
+            V valCourante = racine.valeur; 
             if(!racine.fd.estVide()){
                 Noeud plusPetitNoeud = racine.fd.supprimerPlusPetitNoeud();
-                plusPetitNoeud.fd = racine.fd;
-                racine = plusPetitNoeud;
+                racine.cle = plusPetitNoeud.cle;
+                racine.valeur = plusPetitNoeud.valeur;
             }
             else {
                 racine = racine.fg.racine;
             }
+            return valCourante;
+            
         }
         if (cle.compareTo(racine.cle)<0) {
             return racine.fg.supprimer(cle);
