@@ -5,39 +5,35 @@
  */
 package algoavtd3;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  *
  * @author Antoine
  * @param <K>
  * @param <V>
  */
-public class ABR<K extends Comparable, V > implements Dico{
+public class ABR<K extends Comparable, V > implements Dico<K, V>{
     
     private Noeud racine;
     
     public ABR(){
+        //TODO
         racine = new Noeud();
     }
 
+    /**
+     *
+     * @param cle
+     * @param valeur
+     * @return
+     */
     @Override
-    public Object ajouter(Object cle, Object valeur) {
+    public V ajouter(K cle, V valeur) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public Object rechercher(Object cle) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean exist(Object cle) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Object supprimer(Object cle) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public int nbElem() {
@@ -46,6 +42,21 @@ public class ABR<K extends Comparable, V > implements Dico{
 
     @Override
     public void vider() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public V rechercher(K cle) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean exist(K cle) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public V supprimer(K cle) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
