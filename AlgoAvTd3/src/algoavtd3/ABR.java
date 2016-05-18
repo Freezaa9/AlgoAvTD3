@@ -77,8 +77,18 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
     }
 
     @Override
-    public boolean exist(K cle) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean exist(K cle) {    
+        return existRecursif(racine, cle);              
+    }
+    
+    private boolean existRecursif(Noeud n, K k) {    
+        if (n == null)
+            return false;
+        
+        if (k.compareTo(n.cle) == 0)
+            return true;                      
+        
+        return existRecursif(n.fg.racine, k) || existRecursif(n.fd.racine, k);
     }
 
     @Override
