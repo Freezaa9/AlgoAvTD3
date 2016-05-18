@@ -9,21 +9,7 @@ package algoavtd3;
  *
  * @author Antoine
  */
-public class NavigableMapList implements Dico {
-    
-    
-    private class ABR<K, V> {
-        
-        private class Noeud<K, V> {
-            K cle;
-            V valeur;
-            ABR<K, V> fg; // ne doit jamais être null (et pas testé == null) !!
-                           // L'arbre peut etre vide mais jamais null
-            ABR<K, V> fd; // ne doit jamais être null (et pas testé == null) !!
-                            // Ne pas confondre vide et n'existe pas
-            
-        }
-    }
+public class NavigableMapList<K, V> implements Dico {
     
     
 }
