@@ -84,7 +84,10 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         if (cle.compareTo(racine.cle) == 0)
             return true;  
         
-        return racine.fg.exist(cle) || racine.fd.exist(cle);              
+        if (cle.compareTo(racine.cle) < 0)
+            return racine.fg.exist(cle);
+        else
+            return racine.fd.exist(cle);              
     }
 
     @Override
