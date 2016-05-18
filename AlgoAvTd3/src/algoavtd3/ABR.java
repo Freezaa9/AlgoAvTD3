@@ -67,13 +67,13 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
             return null;
         }
         if (cle.compareTo(racine.cle)==0) {
-            return (V)racine.valeur;
+            return racine.valeur;
         }
         if (cle.compareTo(racine.cle)<0) {
-            return (V)racine.fg.rechercher(cle);
+            return racine.fg.rechercher(cle);
         }
         else{
-            return (V)racine.fd.rechercher(cle);
+            return racine.fd.rechercher(cle);
         }
     }
 
@@ -97,26 +97,26 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
             return null;
         }
         if (cle.compareTo(racine.cle)==0) {
-            if(!racine.fg.estVide()){
-                Noeud<K , V> plusPetitNoeud = supprimerPlusPetitNoeud();
+            if(!racine.fd.estVide()){
+                Noeud plusPetitNoeud = racine.fd.supprimerPlusPetitNoeud();
                 plusPetitNoeud.fd = racine.fd;
                 racine = plusPetitNoeud;
             }
-            else{
+            else {
                 racine = racine.fg.racine;
             }
         }
         if (cle.compareTo(racine.cle)<0) {
-            return (V)racine.fg.supprimer(cle);
+            return racine.fg.supprimer(cle);
         }
         else{
-            return (V)racine.fd.supprimer(cle);
+            return racine.fd.supprimer(cle);
         }
     }
     
     private Noeud supprimerPlusPetitNoeud() {
         if (racine.fg.estVide()) {
-            Noeud< K, V> n = racine;
+            Noeud n = racine;
             racine = null;
             return n;
         }
@@ -130,7 +130,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         return racine == null;
     }
 
-    private class Noeud<K extends Comparable, V> {
+    private class Noeud {
         K cle;
         V valeur;
         ABR<K, V> fg; // ne doit jamais être null (et pas testé == null) !!
