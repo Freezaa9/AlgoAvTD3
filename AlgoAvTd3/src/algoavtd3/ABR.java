@@ -22,26 +22,26 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     /**
      * Ajouter un élément une combinaison clé, valeur dans le Dico.
-     * @param pCle La clé a laquelle la valeur doit être inserer.
-     * @param pValeur la valeur à inserer.
+     * @param cle La clé a laquelle la valeur doit être inserer.
+     * @param valeur la valeur à inserer.
      * @return La valeur remplacé si elle existe, null sinon
      */
     @Override
-    public V ajouter(K pCle, V pValeur) {
+    public V ajouter(K cle, V valeur) {
         if(estVide()){
-            racine = new Noeud(pCle, pValeur);
+            racine = new Noeud(cle, valeur);
             return null;
         }
-        if(pCle.compareTo(racine.cle) == 0 ){
+        if(cle.compareTo(racine.cle) == 0 ){
             V tmpValeur = (V) racine.valeur;
-            racine.valeur = pValeur;
+            racine.valeur = valeur;
             return tmpValeur;
         }
-        if(pCle.compareTo(racine.cle) <= 0 ){
-            return (V) racine.fg.ajouter(pCle, pValeur);
+        if(cle.compareTo(racine.cle) <= 0 ){
+            return (V) racine.fg.ajouter(cle, valeur);
         }
         
-        return (V) racine.fd.ajouter(pCle, pValeur);
+        return (V) racine.fd.ajouter(cle, valeur);
     }
     
 
