@@ -81,7 +81,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public boolean exist(K cle) {    
-        if (racine == null)
+        if (estVide())
             return false;
         
         if (cle.compareTo(racine.cle) == 0)
