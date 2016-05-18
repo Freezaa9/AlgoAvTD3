@@ -42,7 +42,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public void vider() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        racine = new Noeud();
     }
 
     /**
@@ -78,7 +78,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
     
     @Override
     public boolean estVide() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return racine.cle != null;
     }
 
     private class Noeud<K extends Comparable, V> {
