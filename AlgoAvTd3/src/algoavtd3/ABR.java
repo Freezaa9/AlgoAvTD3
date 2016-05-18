@@ -47,7 +47,10 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public int nbElem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(this.estVide()){
+            return 0;
+        }
+        return racine.fg.nbElem() + racine.fd.nbElem() + 1;
     }
 
     @Override
