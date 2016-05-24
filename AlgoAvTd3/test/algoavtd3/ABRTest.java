@@ -42,11 +42,11 @@ public class ABRTest {
      */
     @Test
     public void testAjouterExist() {
-        System.out.println("ajouter");
+        System.out.println("ajoutet et exist");
         Integer cle = 1;
         String valeur = "pizza";
-        ABR<Integer, String> instance = new ABR<>();
-        Object result = instance.ajouter(cle, valeur);
+        Dico<Integer, String> instance = new ABR<>();
+        instance.ajouter(cle, valeur);
         assertEquals(instance.exist(cle), true);
     }
 
@@ -55,12 +55,12 @@ public class ABRTest {
      */
     @Test
     public void testAjouterRechercher() {
-        System.out.println("ajouter");
+        System.out.println("ajouter et rechercher");
         Integer cle = 1;
         String valeur = "pizza";
-        ABR<Integer, String> instance = new ABR<>();
-        Object result = instance.ajouter(cle, valeur);
-        assertEquals(instance.exist(cle), valeur);
+        Dico<Integer, String> instance = new ABR<>();
+        instance.ajouter(cle, valeur);
+        assertEquals(instance.rechercher(cle), valeur);
     }
     
     /**
@@ -90,48 +90,17 @@ public class ABRTest {
     }
 
     /**
-     * Test of rechercher method, of class ABR.
-     */
-    @Test
-    public void testRechercher() {
-        System.out.println("rechercher");
-        Object cle = null;
-        ABR instance = new ABR();
-        Object expResult = null;
-        Object result = instance.rechercher(cle);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of exist method, of class ABR.
-     */
-    @Test
-    public void testExist() {
-        System.out.println("exist");
-        Object cle = null;
-        ABR instance = new ABR();
-        boolean expResult = false;
-        boolean result = instance.exist(cle);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of supprimer method, of class ABR.
      */
     @Test
-    public void testSupprimer() {
-        System.out.println("supprimer");
-        Object cle = null;
-        ABR instance = new ABR();
-        Object expResult = null;
-        Object result = instance.supprimer(cle);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testAjouterSupprimer() {
+        System.out.println("ajouter et supprimer");
+        Integer cle = 1;
+        String valeur = "pizza";
+        Dico<Integer, String> instance = new ABR<>();
+        instance.ajouter(cle,valeur);
+        assertEquals(instance.supprimer(cle), "pizza");
+        assertEquals(instance.supprimer(cle),null);
     }
 
     /**
