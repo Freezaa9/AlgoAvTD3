@@ -69,12 +69,18 @@ public class ABRTest {
     @Test
     public void testNbElem() {
         System.out.println("nbElem");
-        ABR instance = new ABR();
+        Dico<Integer, Integer> a = new ABR<>();
         int expResult = 0;
-        int result = instance.nbElem();
+        int result = a.nbElem();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        a.ajouter(1, 1);
+        a.ajouter(0,0);
+        a.ajouter(2,2);
+       
+        expResult = 3;
+        result = a.nbElem();
+        assertEquals(expResult, result);
     }
 
     /**
