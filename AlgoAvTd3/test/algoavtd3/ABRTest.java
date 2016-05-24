@@ -127,13 +127,20 @@ public class ABRTest {
      */
     @Test
     public void testEstVide() {
-        System.out.println("estVide");
-        ABR instance = new ABR();
-        boolean expResult = false;
-        boolean result = instance.estVide();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("nbElem");
+        Dico<Integer, Integer> a = new ABR<>();
+        
+        a.ajouter(1, 1);
+        a.ajouter(0,0);
+        a.ajouter(2,2);
+       
+        
+        assertFalse(a.estVide());
+        
+        a.vider();
+        
+        assertTrue(a.estVide());
+
     }
 
     /**
