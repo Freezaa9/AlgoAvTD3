@@ -160,7 +160,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         construireArbre(l, this, 0, l.size()-1);
     }
     
-    private void construireArbre(List<tuple> l,ABR arbre,int debut, int fin){
+    private void construireArbre(List<tuple> l,ABR arbre ,int debut, int fin){
         
         if(fin == debut){
             arbre.ajouter(l.get(debut).cle, l.get(debut).valeur);
