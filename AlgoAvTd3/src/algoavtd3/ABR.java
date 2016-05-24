@@ -144,7 +144,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         if (Math.abs(racine.fg.hauteur() - racine.fd.hauteur()) > 1){
             return false;
         }
-        return racine.fg.estEquilibre() && racine.fd.estEquilibre();
+        return true && racine.fg.estEquilibre() && racine.fd.estEquilibre();
     }
 
     @Override
