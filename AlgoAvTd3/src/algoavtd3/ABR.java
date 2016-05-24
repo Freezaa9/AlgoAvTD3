@@ -156,7 +156,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
     @Override
     public void equilibrer() {
         // Mettre dans un tableau
-        List<tuple> l = new ArrayList<>();
+        List<tuple> l = new ArrayList<>(nbElem());
         parcourArbre(l);        
         // Utiliser la valeur du milieu comme racine
         racine = null;
