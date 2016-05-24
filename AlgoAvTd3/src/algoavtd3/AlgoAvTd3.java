@@ -24,7 +24,7 @@ public class AlgoAvTd3 {
         instance.ajouter(5 ,"papier" );
         instance.ajouter(6 ,"papier" );
         instance.ajouter(2 ,"papier" );
-        instance.ajouter(1 ,"papier" );
+        instance.ajouter(1 ,"papier" );        
         instance.ajouter(3 ,"papier" );
         instance.ajouter(9 ,"papier" );
         instance.ajouter(7 ,"papier" );
@@ -32,7 +32,21 @@ public class AlgoAvTd3 {
         System.out.println(instance.toSTring());
         
         
-        System.out.println("/n ------------------------ /n");
+        System.out.println("\n ------------------------ \n");    
+         
+        Dico<Integer, String> instance2 = new ABR<>();
+                
+        instance2.ajouter(10 ,"papier" );
+        instance2.ajouter(5 ,"papier" );
+        instance2.ajouter(3 ,"papier" );
+        instance2.ajouter(1 ,"papier" );        
+        instance2.ajouter(4 ,"papier" );
+        instance2.ajouter(8 ,"papier" );
+        instance2.ajouter(15 ,"papier" );
+         instance2.ajouter(16 ,"papier" );
+
+        System.out.println(instance2.toSTring());
     }
+    
     
 }

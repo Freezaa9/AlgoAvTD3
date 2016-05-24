@@ -244,10 +244,10 @@ public class ABR<K extends Comparable, V> implements Dico<K, V> {
 //        }
 //        return sB;
 //    }
-    private StringBuilder toStringWrapper(ABR arbre, StringBuilder sB, int c) {
+    private StringBuilder toStringWrapper(ABR arbre, StringBuilder sB, int c,char pipe) {
         StringBuilder tab = new StringBuilder();
         for (int i = 0; i < c; i++) {
-            tab.append("	");
+            tab.append(pipe+"	");
         }
         if (arbre.estVide()) {
             sB.append("Vide\n");
@@ -258,10 +258,10 @@ public class ABR<K extends Comparable, V> implements Dico<K, V> {
             if (!(arbre.racine.fg.estVide() && arbre.racine.fd.estVide())) {
                 sB.append(tab.toString());
                 sB.append("|-");
-                sB = toStringWrapper(arbre.racine.fg, sB, c);
+                sB = toStringWrapper(arbre.racine.fg, sB, c,'|');                            
                 sB.append(tab.toString());
-                sB.append("|+");
-                sB = toStringWrapper(arbre.racine.fd, sB, c);
+                sB.append("+-");
+                sB = toStringWrapper(arbre.racine.fd, sB, c,' ');
             }
 
         }
@@ -271,7 +271,7 @@ public class ABR<K extends Comparable, V> implements Dico<K, V> {
     @Override
     public String toSTring() {
         StringBuilder sB = new StringBuilder();
-        sB = toStringWrapper(this, sB, 0);
+        sB = toStringWrapper(this, sB, 0,'|');
         return sB.toString();
     }
 
