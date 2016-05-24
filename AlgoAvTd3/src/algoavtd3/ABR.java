@@ -5,7 +5,7 @@
  */
 package algoavtd3;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -153,30 +153,43 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
     @Override
     public void equilibrer() {
         // Mettre dans un tableau
+        List<tuple> l = new ArrayList<>();
+        parcourArbre(l);        
+        
+        //Construire le tableau
+        racine = construireArbre(l, 0, l.size());
         // Utiliser la valeur du milieu comme racine
+        
         // Ajouter le tableau de gauche dans le sous arbre gauche
+        
         // Ajouter le tableau de droite dans le sous arbre de droite
+        
         // Use Récursivité
-        int hauteur = this.hauteur();
-        //Noeud[] tab = (Noeud[]) new Object[(hauteur*2)+1];
-        List<tuple> l = new LinkedList<>(); //lunkedList , ArrayList ??????
-//        for (int i = 0; i < tab.length; i++) {
-//            tab[i]=test();
-//        }       
+        
         
     }
     
-    private List<tuple> parcourArbre(){
-        List<tuple> l = new LinkedList<>();
-        if (!estVide()) {
-            l.addAll(racine.fg.parcourArbre());
-            l.add(new tuple(racine.cle,racine.valeur));
-           //traitement
-            
-           //Parcours sous arbre droit
-            racine.fd.parcourArbre();
+    private Noeud construireArbre(List<tuple> l, int debut, int fin){
+        if(!l.isEmpty()){
+            Noeud node;
+            if (debut==fin)
+                node = new Noeud(l.get(debut).cle, l.get(debut).valeur);
+                
+                return node;
+            else
+                construireArbre(List<tuple> l, int debut,int fin)
+            racine.cle = l.size()/2;
+            racine.fg.construireArbre(l.subList(0, l.size()/2));
+            racine.fg.construireArbre(l.subList(0, l.size()/2));
         }
-        
+    }
+    
+    private void parcourArbre(List<tuple> l){        
+        if (!estVide()) {
+            racine.fg.parcourArbre(l);
+            l.add(new tuple(racine.cle,racine.valeur));
+            racine.fd.parcourArbre(l);
+        }
     }
     
     
