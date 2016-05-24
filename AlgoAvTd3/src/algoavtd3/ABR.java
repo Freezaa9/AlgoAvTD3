@@ -149,6 +149,12 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public void equilibrer() {
+        // Mettre dans un tableau
+        // Utiliser la valeur du milieu comme racine
+        // Ajouter le tableau de gauche dans le sous arbre gauche
+        // Ajouter le tableau de droite dans le sous arbre de droite
+        // Use Récursivité
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
