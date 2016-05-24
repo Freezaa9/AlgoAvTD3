@@ -148,13 +148,24 @@ public class ABRTest {
      */
     @Test
     public void testHauteur() {
-        System.out.println("hauteur");
-        ABR instance = new ABR();
+        System.out.println("nbElem");
+        Dico<Integer, Integer> a = new ABR<>();
+        
         int expResult = 0;
-        int result = instance.hauteur();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(a.hauteur(), expResult);
+        
+        a.ajouter(1, 1);
+        a.ajouter(0,0);
+        a.ajouter(2,2);
+        
+        expResult = 2;
+        assertEquals(a.hauteur(), expResult);
+        
+        a.ajouter(3,2);
+        
+        expResult = 3;
+        assertEquals(a.hauteur(), expResult);
+        
     }
 
     /**
