@@ -144,10 +144,13 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
 
     @Override
     public boolean estEquilibre() {
+        if(estVide()){
+            return true;
+        }
         if (Math.abs(racine.fg.hauteur() - racine.fd.hauteur()) > 1){
             return false;
         }
-        return true && racine.fg.estEquilibre() && racine.fd.estEquilibre();
+        return racine.fg.estEquilibre() && racine.fd.estEquilibre();
     }
 
     @Override

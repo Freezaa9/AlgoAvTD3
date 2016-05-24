@@ -174,12 +174,21 @@ public class ABRTest {
     @Test
     public void testEstEquilibre() {
         System.out.println("estEquilibre");
-        ABR instance = new ABR();
-        boolean expResult = false;
-        boolean result = instance.estEquilibre();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //création d'un arbre
+        Integer cle = 1;
+        String valeur = "pizza";
+        Dico<Integer, String> instance = new ABR<>();
+        instance.ajouter(cle, valeur);
+        instance.ajouter(2 ,"papier" );
+        
+        assertEquals(true, instance.estEquilibre());
+        
+        instance.ajouter(3 ,"papier" );
+        instance.ajouter(4 ,"papier" );
+        assertEquals(false, instance.estEquilibre());
+        
+        System.out.println("hauteur avant : " + instance.hauteur());
+ 
     }
 
     /**
