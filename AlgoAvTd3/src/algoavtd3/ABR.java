@@ -77,7 +77,7 @@ public class ABR<K extends Comparable, V> implements Dico<K, V> {
     /**
      * Recherche une valeur par rappord à sa clef
      *
-     * @param cle
+     * @param cle : Clef de l'element a rechercher
      * @return V valeur correspondant à la clef
      */
     @Override
@@ -98,7 +98,7 @@ public class ABR<K extends Comparable, V> implements Dico<K, V> {
     /**
      * indique si un noeud existe par rappord à sa clef
      *
-     * @param cle
+     * @param cle : clef de l'element a tester
      * @return boolean existe ou non
      */
     @Override
@@ -121,7 +121,7 @@ public class ABR<K extends Comparable, V> implements Dico<K, V> {
     /**
      * Supprime un noeud par rappord à sa clef
      *
-     * @param cle
+     * @param cle : clef de l'element à supprimer
      * @return V la valeur de la clef supprimer
      */
     @Override
@@ -274,7 +274,6 @@ public class ABR<K extends Comparable, V> implements Dico<K, V> {
         sB = toStringWrapper(this, sB, 0,'|');
         return sB.toString();
     }
-
     /*
      * <h1>{@code Noeud} - Abstraction d'un Noeud</h1>
      * <p>
