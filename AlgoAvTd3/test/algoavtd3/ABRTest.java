@@ -88,11 +88,24 @@ public class ABRTest {
      */
     @Test
     public void testVider() {
-        System.out.println("vider");
-        ABR instance = new ABR();
-        instance.vider();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("nbElem");
+        Dico<Integer, Integer> a = new ABR<>();
+        int expResult = 0;
+        int result = a.nbElem();
+        assertEquals(expResult, result);
+        
+        a.ajouter(1, 1);
+        a.ajouter(0,0);
+        a.ajouter(2,2);
+       
+        expResult = 3;
+        result = a.nbElem();
+        assertEquals(expResult, result);
+        
+        a.vider();
+        expResult = 0;
+        result = a.nbElem();
+        assertEquals(expResult, result);
     }
 
     /**
