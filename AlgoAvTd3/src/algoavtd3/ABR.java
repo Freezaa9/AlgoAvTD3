@@ -5,6 +5,9 @@
  */
 package algoavtd3;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * @author Antoine
  * @param <K>
@@ -154,9 +157,29 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         // Ajouter le tableau de gauche dans le sous arbre gauche
         // Ajouter le tableau de droite dans le sous arbre de droite
         // Use Récursivité
+        int hauteur = this.hauteur();
+        //Noeud[] tab = (Noeud[]) new Object[(hauteur*2)+1];
+        List<tuple> l = new LinkedList<>(); //lunkedList , ArrayList ??????
+//        for (int i = 0; i < tab.length; i++) {
+//            tab[i]=test();
+//        }       
         
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    private List<tuple> parcourArbre(){
+        List<tuple> l = new LinkedList<>();
+        if (!estVide()) {
+            l.addAll(racine.fg.parcourArbre());
+            l.add(new tuple(racine.cle,racine.valeur));
+           //traitement
+            
+           //Parcours sous arbre droit
+            racine.fd.parcourArbre();
+        }
+        
+    }
+    
+    
 
     private class Noeud {
         K cle;
@@ -170,6 +193,18 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         public Noeud(K cle, V valeur) {
             this.fg = new ABR<>();
             this.fd = new ABR<>();
+            this.cle = cle;
+            this.valeur = valeur;
+        }               
+    }
+    
+        private class tuple {
+        K cle;
+        V valeur;
+        
+
+
+        public tuple(K cle, V valeur) {
             this.cle = cle;
             this.valeur = valeur;
         }               
