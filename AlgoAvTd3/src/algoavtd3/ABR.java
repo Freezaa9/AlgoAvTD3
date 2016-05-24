@@ -155,32 +155,24 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
         // Mettre dans un tableau
         List<tuple> l = new ArrayList<>();
         parcourArbre(l);        
-        
-        //Construire le tableau
-        racine = construireArbre(l, 0, l.size());
         // Utiliser la valeur du milieu comme racine
-        
-        // Ajouter le tableau de gauche dans le sous arbre gauche
-        
-        // Ajouter le tableau de droite dans le sous arbre de droite
-        
-        // Use Récursivité
-        
-        
+        racine = null;
+        construireArbre(l, this, 0, l.size()-1);
     }
     
-    private Noeud construireArbre(List<tuple> l, int debut, int fin){
-        if(!l.isEmpty()){
-            Noeud node;
-            if (debut==fin)
-                node = new Noeud(l.get(debut).cle, l.get(debut).valeur);
-                
-                return node;
-            else
-                construireArbre(List<tuple> l, int debut,int fin)
-            racine.cle = l.size()/2;
-            racine.fg.construireArbre(l.subList(0, l.size()/2));
-            racine.fg.construireArbre(l.subList(0, l.size()/2));
+    private void construireArbre(List<tuple> l,ABR arbre,int debut, int fin){
+        
+        if(fin == debut){
+            arbre.ajouter(l.get(debut).cle, l.get(debut).valeur);
+        }
+        else if(fin == debut+1){
+            arbre.ajouter(l.get(debut).cle,l.get(debut).valeur);
+            arbre.ajouter(l.get(fin).cle,l.get(fin).valeur);
+        }
+        else if(fin > debut+1){
+            arbre.ajouter(l.get(fin - (fin-debut)/2).cle, l.get(fin - (fin-debut)/2).valeur);
+            construireArbre(l, arbre, debut, fin - (fin-debut)/2-1);
+            construireArbre(l,arbre, fin - (fin-debut)/2+1, fin);    
         }
     }
     
@@ -190,6 +182,7 @@ public class ABR<K extends Comparable, V > implements Dico<K, V>{
             l.add(new tuple(racine.cle,racine.valeur));
             racine.fd.parcourArbre(l);
         }
+        
     }
     
     
